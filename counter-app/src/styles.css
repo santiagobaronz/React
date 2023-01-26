@@ -5,3 +5,12 @@ html, body {
     font-size: 1.3rem;
     padding: 70px;
 }
+
+button{
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: cadetblue;
+    color: #FFF;
+    font-size: 20px;
+}

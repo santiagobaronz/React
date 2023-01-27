@@ -1,0 +1,5 @@
+1). Crear la aplicación con vite
+-- npm create vite
+2). Eliminar de la carpeta /src todo menos el main.jsx
+3). Instalar las dependecias
+-- npm install

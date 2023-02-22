@@ -22,7 +22,7 @@ export const HomePage = () => {
 
 				<div className='span-info rounded-lg font-medium flex'>
 					<i className="bi bi-info-circle mr-3"></i>
-					<p>Enlace del ejercicio <a href='/()(20201020111)_2.59(D)_A_1_1.pdf' target={'_blank'} className='text-blue'>resuelto</a></p>
+					<p>Enlace del ejercicio <a href='/assets/()(20201020111)_2.59(D)_A_1_1.pdf' target={'_blank'} className='text-blue'>resuelto</a></p>
 				</div>
 
 				<h2 className='mt-10 text-7xl font-bold text-center text-title-color'>Obtén la <span className='text-blue'>probabilidad</span> de sacar escalera con cartas.</h2>
@@ -45,13 +45,13 @@ export const HomePage = () => {
 					</div>
 				</div>
 				<div className='w-1/2 flex justify-center'>
-					<img src="/first.png" className='w-5/6' />
+					<img src="/assets/first.png" className='w-5/6' />
 				</div>
 			</div>
 
 			<div className='flex items-center mb-28'>
 				<div className='w-1/2 flex justify-center'>
-					<img src="/second.png" className='w-5/6' />
+					<img src="/assets/second.png" className='w-5/6' />
 				</div>
 				<div className='w-1/2'>
 					<div className='mr-10 ml-20'>
@@ -71,13 +71,13 @@ export const HomePage = () => {
 					</div>
 				</div>
 				<div className='w-1/2 flex justify-center'>
-					<img src="/number3.png" className='w-5/6' />
+					<img src="/assets/number3.png" className='w-5/6' />
 				</div>
 			</div>
 
 			<div className='flex items-center mb-28 bg-[#0000006d] p-10 px-14 rounded-2xl shadow-2xl'>
 				<div className='w-1/2 flex justify-center'>
-					<img src="/number4.png" className='w-5/6' />
+					<img src="/assets/number4.png" className='w-5/6' />
 				</div>
 				<div className='w-1/2'>
 					<div className='mr-10 ml-20'>

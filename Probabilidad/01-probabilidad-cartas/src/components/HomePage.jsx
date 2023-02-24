@@ -32,11 +32,7 @@ export const HomePage = () => {
 
 			</div>
 
-			<div className='mt-12 mb-20'>
-				<Escalera />
-			</div>
-
-			<div className='flex items-center mb-28' ref={elementoAncla}>
+			<div className='flex items-center mt-12 mb-20' ref={elementoAncla}>
 				<div className='w-1/2'>
 					<div className='mr-10 ml-20'>
 						<span className='text-text-color font-medium'>• OBTENER LOS DATOS •</span>
@@ -86,6 +82,10 @@ export const HomePage = () => {
 						<p className=' text-text-color text-xl'>Para calcular la probabilidad de obtener una escalera, dividimos el número total de escaleras posibles por el número total de combinaciones de cartas y multiplicamos el resultado por 100. El resultado final se expresa como un porcentaje.</p>
 					</div>
 				</div>
+			</div>
+
+			<div>
+				<Escalera />
 			</div>
 		</div>
 	)

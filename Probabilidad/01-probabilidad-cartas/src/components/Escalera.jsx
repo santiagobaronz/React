@@ -53,7 +53,7 @@ function ProbabilidadEscalera() {
 			{mostrarResultado && (
 				<div id="finalResult" className="bg-black-bg px-10 py-6 rounded-lg mt-8 flex justify-between items-center">
 					<p className="text-white">La probabilidad de sacar una escalera de {cartasEscalera} cartas en un mazo de {totalCartas} cartas es:</p>
-					<p className="bg-[#0000006d] py-3 px-12 rounded-lg text-white font-medium">{probabilidad.toExponential(6)} %</p>
+					<p className="bg-[#0000006d] py-3 px-12 rounded-lg text-white font-medium">{probabilidad.toExponential(6)}</p>
 				</div>
 			)}
 

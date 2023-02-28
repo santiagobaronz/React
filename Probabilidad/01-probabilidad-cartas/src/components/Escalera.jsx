@@ -36,7 +36,7 @@ function ProbabilidadEscalera() {
 	}
 
 	return (
-		<div className="bg-[#0000006d] p-10 px-14 rounded-2xl shadow-2xl">
+		<div className="bg-[#dedede6d] p-10 px-14 rounded-2xl shadow-2xl">
 			<div className="w-full flex items-center">
 				<label className="text-title-color font-medium">
 					Número total de cartas:
@@ -47,7 +47,7 @@ function ProbabilidadEscalera() {
 					<input className="w-1/4 h-12 rounded-md ml-5 text-center mt-1 text-title-color bg-black-bg" type="number" value={cartasEscalera} onChange={(event) => setCartasEscalera(Number(event.target.value))} />
 				</label>
 
-				<button onClick={calcularProbabilidad} className='bg-blue  w-1/3 text-white py-3 px-10 rounded-lg font-medium' >Calcular probabilidad</button>
+				<button onClick={calcularProbabilidad} className='bg-blue  w-1/3 text-black-bg py-3 px-10 rounded-lg font-medium' >Calcular probabilidad</button>
 			</div>
 
 			{mostrarResultado && (

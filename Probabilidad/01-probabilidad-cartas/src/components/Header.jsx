@@ -9,7 +9,7 @@ export const Header = () => {
 			<h1 className="text-white font-medium text-xl ml-3">Probabilidad</h1>
 		</div>
 		
-		<a href="https://github.com/santiagobaronz/React/tree/master/Probabilidad/01-probabilidad-cartas" target={'_blank'} className="bg-blue py-2 px-7 flex text-white rounded-full items-center" id="tooltip_website">
+		<a href="https://github.com/santiagobaronz/React/tree/master/Probabilidad/01-probabilidad-cartas" target={'_blank'} className="bg-blue py-2 px-7 flex text-black-bg rounded-full items-center" id="tooltip_website">
 			<i className="bi bi-github text-xl"></i>
 			<p className="font-medium ml-3">Califica en GitHub</p>
 		</a>

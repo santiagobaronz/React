@@ -18,9 +18,9 @@ module.exports = {
 			center: true,
 		},
 		colors: {
-			'white': '#FFF', 
-			'black-bg': '#17181c',
-			'title-color': '#d1d4db',
+			'white': '#17181c', 
+			'black-bg': '#FFF',
+			'title-color': '#000',
 			'text-color': '#6e727d',
 			'blue': '#2563ea',
 			'gray': '#707378',

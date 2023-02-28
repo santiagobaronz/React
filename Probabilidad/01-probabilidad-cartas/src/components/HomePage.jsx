@@ -28,11 +28,11 @@ export const HomePage = () => {
 				<h2 className='mt-10 text-7xl font-bold text-center text-title-color'>Obtén la <span className='text-blue'>probabilidad</span> de sacar escalera con cartas.</h2>
 				<p className='mt-10 text-center text-text-color text-xl w-4/6 m-auto'>Esta herramienta permite al usuario ingresar el número de cartas que se reparten y el número de cartas necesarias para formar una escalera. Luego, calculara la probabilidad de sacar una escalera específica y la probabilidad de sacar cualquier escalera.</p>
 
-				<button onClick={moverAVistaAncla} className='bg-blue py-3 px-7 text-white font-medium rounded-xl block text-center w-max m-auto mt-10'>Conocer cómo funciona</button>
+				<button onClick={moverAVistaAncla} className='bg-blue py-3 px-7 text-black-bg font-medium rounded-xl block text-center w-max m-auto mt-10'>Conocer cómo funciona</button>
 
 			</div>
 
-			<div className='flex items-center mt-12 mb-20' ref={elementoAncla}>
+			<div className='flex items-center mt-20 mb-20' ref={elementoAncla}>
 				<div className='w-1/2'>
 					<div className='mr-10 ml-20'>
 						<span className='text-text-color font-medium'>• OBTENER LOS DATOS •</span>
@@ -71,7 +71,7 @@ export const HomePage = () => {
 				</div>
 			</div>
 
-			<div className='flex items-center mb-28 bg-[#0000006d] p-10 px-14 rounded-2xl shadow-2xl'>
+			<div className='flex items-center mb-28 bg-[#ffffff6d] p-10 px-14 rounded-2xl shadow-2xl'>
 				<div className='w-1/2 flex justify-center'>
 					<img src="/assets/number4.png" className='w-5/6' />
 				</div>
@@ -84,7 +84,7 @@ export const HomePage = () => {
 				</div>
 			</div>
 
-			<div>
+			<div className='mb-40'>
 				<Escalera />
 			</div>
 		</div>

@@ -53,7 +53,7 @@ export const HomePage = () => {
 					<div className='mr-10 ml-20'>
 						<span className='text-text-color font-medium'>• HACER CALCULOS •</span>
 						<h3 className='text-title-color font-medium text-3xl mt-5 mb-5'>Calcular el número total de combinaciones de cartas.</h3>
-						<p className=' text-text-color text-xl'>La fórmula de combinaciones se utiliza para calcular el número total de formas en que se pueden seleccionar un número determinado de objetos de un grupo más grande. En este caso, el número total de combinaciones de cartas se calcula utilizando la fórmula (n! / (k! * (n-k)!)), donde n es el número total de cartas y k es el número de cartas en la escalera.</p>
+						<p className=' text-text-color text-xl'>La fórmula de combinaciones se usa para calcular las formas de seleccionar objetos de un grupo más grande. En el caso de una baraja, se usa (n! / (k! * (n-k)!)) para determinar las combinaciones de cartas.</p>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@ export const HomePage = () => {
 					<div className='mr-10 ml-20'>
 						<span className='text-text-color font-medium'>• OTROS CALCULOS •</span>
 						<h3 className='text-title-color font-medium text-3xl mt-5 mb-5'>Calculamos el número total de escaleras posibles en el mazo</h3>
-						<p className=' text-text-color text-xl'>La fórmula para calcular el número total de escaleras posibles en un mazo es [(n-k+1)(n-k)(n-2k+1)] / 6, donde n es el número total de cartas y k es el número de cartas en la escalera. Esta fórmula tiene en cuenta las diferentes posibles combinaciones de palos y valores de las cartas en la escalera.</p>
+						<p className=' text-text-color text-xl'>Fórmula para escaleras en un mazo: [(n-k+1)(n-k)(n-2k+1)] / 6, donde n es el total de cartas y k es el número de cartas en la escalera. Considera combinaciones de palos y valores.</p>
 					</div>
 				</div>
 				<div className='w-1/2 flex justify-center'>
@@ -79,7 +79,7 @@ export const HomePage = () => {
 					<div className='mr-10 ml-20'>
 						<span className='text-text-color font-medium'>• ÚLTIMO CALCÚLO •</span>
 						<h3 className='text-title-color font-medium text-3xl mt-5 mb-5'>Calcular la probabilidad de obtener una escalera.</h3>
-						<p className=' text-text-color text-xl'>Para calcular la probabilidad de obtener una escalera, dividimos el número total de escaleras posibles por el número total de combinaciones de cartas y multiplicamos el resultado por 100. El resultado final se expresa como un porcentaje.</p>
+						<p className=' text-text-color text-xl'>La probabilidad de obtener una escalera se calcula dividiendo el número total de escaleras posibles entre el número total de combinaciones de cartas, y luego multiplicando el resultado por 100 para obtener el porcentaje.</p>
 					</div>
 				</div>
 			</div>

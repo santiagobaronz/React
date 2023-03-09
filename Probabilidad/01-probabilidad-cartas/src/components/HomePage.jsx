@@ -22,7 +22,7 @@ export const HomePage = () => {
 
 				<div className='span-info rounded-lg font-medium flex'>
 					<i className="bi bi-info-circle mr-3"></i>
-					<p>Enlace del ejercicio <a href='/assets/()(20201020111)_2.59(D)_A_1_1.pdf' target={'_blank'} className='text-blue'>resuelto</a></p>
+					<p>Enlace del ejercicio <a href='/assets/(20212020052)(20201020111)_2.59(D)_A_1_1.pdf' target={'_blank'} className='text-blue'>resuelto</a></p>
 				</div>
 
 				<h2 className='mt-10 text-7xl font-bold text-center text-title-color'>Obtén la <span className='text-blue'>probabilidad</span> de sacar escalera con cartas.</h2>

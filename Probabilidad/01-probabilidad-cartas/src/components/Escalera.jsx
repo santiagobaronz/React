@@ -38,9 +38,33 @@ function ProbabilidadEscalera() {
 
 	const options = {}
 
+	const reset = () => {
+		setTotalCartas(52);
+		setCartasEscalera(5);
+		setProbabilidad(0);
+		setMostrarResultado(false);
+		setChartData(prevChartData => {
+			return {
+				labels: ["Probabilidades de sacar una escalera de n cartas con un mazo de m cartas"],
+				datasets: [
+				  {
+					label: "",
+					data: null,
+					backgroundColor: "transparent",
+					borderColor: "transparent",
+					borderWidth: 1,
+				  },
+				],
+			  };
+		});
+	}
 
 	function calcularProbabilidad() {
-		// Calcular el número total de posibles resultados
+
+		if(cartasEscalera <= 0){
+			setMostrarResultado(false)
+		}else{
+			// Calcular el número total de posibles resultados
 		const nS = combinatoria(totalCartas, cartasEscalera);
 
 		// Calcular el número de formas en que se puede obtener una escalera de 5 cartas
@@ -67,8 +91,8 @@ function ProbabilidadEscalera() {
 				],
 			};
 		});
-
-		(cartasEscalera <= 0) ? setMostrarResultado(false) : setMostrarResultado(true)
+			setMostrarResultado(true)
+		}
 	}
 
 	// Función para calcular la combinatoria
@@ -108,6 +132,7 @@ function ProbabilidadEscalera() {
 					<div className="mt-20">
 						<Bar data={chartData} options={options}></Bar>
 					</div>
+					<button className="bg-blue px-10 py-3 mt-10 text-black-bg rounded-lg" onClick={reset}>Limpiar campos</button>
 				</div>
 
 

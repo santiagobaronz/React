@@ -10,10 +10,10 @@ function generarColorAleatorio() {
 	var letras = "0123456789ABCDEF";
 	var color = "#";
 	for (var i = 0; i < 6; i++) {
-	  color += letras[Math.floor(Math.random() * 16)];
+		color += letras[Math.floor(Math.random() * 16)];
 	}
 	return color;
-  }
+}
 
 function ProbabilidadEscalera() {
 
@@ -21,24 +21,26 @@ function ProbabilidadEscalera() {
 	const [cartasEscalera, setCartasEscalera] = useState(5);
 	const [probabilidad, setProbabilidad] = useState(0);
 	const [mostrarResultado, setMostrarResultado] = useState(false);
+	const [primeraVez, setPrimeraVez] = useState(false)
 	const [chartData, setChartData] = useState({
 		labels: ["Probabilidades de sacar una escalera de n cartas con un mazo de m cartas"],
 		datasets: [
-		  {
-			label: "",
-			data: null,
-			backgroundColor: "transparent",
-			borderColor: "transparent",
-			borderWidth: 1,
-		  },
+			{
+				label: "",
+				data: null,
+				backgroundColor: "transparent",
+				borderColor: "transparent",
+				borderWidth: 1,
+			},
 		],
-	  });
+	});
 
-	  
+
 
 	const options = {}
 
 	const reset = () => {
+		setPrimeraVez(false)
 		setTotalCartas(52);
 		setCartasEscalera(5);
 		setProbabilidad(0);
@@ -47,50 +49,73 @@ function ProbabilidadEscalera() {
 			return {
 				labels: ["Probabilidades de sacar una escalera de n cartas con un mazo de m cartas"],
 				datasets: [
-				  {
-					label: "",
-					data: null,
-					backgroundColor: "transparent",
-					borderColor: "transparent",
-					borderWidth: 1,
-				  },
-				],
-			  };
-		});
-	}
-
-	function calcularProbabilidad() {
-
-		if(cartasEscalera <= 0){
-			setMostrarResultado(false)
-		}else{
-			// Calcular el número total de posibles resultados
-		const nS = combinatoria(totalCartas, cartasEscalera);
-
-		// Calcular el número de formas en que se puede obtener una escalera de 5 cartas
-		const nA = 10 * Math.pow(4, cartasEscalera) - (4 * cartasEscalera);
-
-		// Calcular la probabilidad del evento A
-		const pA = nA / nS;
-
-		// Actualizar el estado de probabilidad con el resultado
-		setProbabilidad(parseFloat(pA));
-
-		setChartData(prevChartData => {
-			return {
-				...prevChartData,
-				datasets: [
-					...prevChartData.datasets,
 					{
-						label: `Probabilidad con mazo de ${totalCartas} y ${cartasEscalera} cartas en escalera`,
-						data: [pA],
-						backgroundColor: generarColorAleatorio(),
-						borderColor: "#ccc",
+						label: "",
+						data: null,
+						backgroundColor: "transparent",
+						borderColor: "transparent",
 						borderWidth: 1,
 					},
 				],
 			};
 		});
+	}
+
+	function calcularProbabilidad() {
+
+		setPrimeraVez(true);
+
+		if (cartasEscalera <= 0 || cartasEscalera > totalCartas) {
+			setMostrarResultado(false)
+		} else {
+			if (cartasEscalera == totalCartas) {
+				setProbabilidad(100);
+
+				setChartData(prevChartData => {
+					return {
+						...prevChartData,
+						datasets: [
+							...prevChartData.datasets,
+							{
+								label: `Probabilidad con mazo de ${totalCartas} y ${cartasEscalera} cartas en escalera`,
+								data: [100],
+								backgroundColor: generarColorAleatorio(),
+								borderColor: "#ccc",
+								borderWidth: 1,
+							},
+						],
+					};
+				});
+			} else {
+				// Calcular el número total de posibles resultados
+				const nS = combinatoria(totalCartas, cartasEscalera);
+
+				// Calcular el número de formas en que se puede obtener una escalera de 5 cartas
+				const nA = 10 * Math.pow(4, cartasEscalera) - (4 * cartasEscalera);
+
+				// Calcular la probabilidad del evento A
+				const pA = nA / nS;
+
+				// Actualizar el estado de probabilidad con el resultado
+				setProbabilidad(parseFloat(pA));
+
+				setChartData(prevChartData => {
+					return {
+						...prevChartData,
+						datasets: [
+							...prevChartData.datasets,
+							{
+								label: `Probabilidad con mazo de ${totalCartas} y ${cartasEscalera} cartas en escalera`,
+								data: [pA],
+								backgroundColor: generarColorAleatorio(),
+								borderColor: "#ccc",
+								borderWidth: 1,
+							},
+						],
+					};
+				});
+			}
+
 			setMostrarResultado(true)
 		}
 	}
@@ -113,7 +138,7 @@ function ProbabilidadEscalera() {
 			<div className="w-full flex items-center">
 				<label className="text-title-color font-medium">
 					Número total de cartas:
-					<input className="w-1/4 text-center h-12 rounded-md ml-5 mt-1 text-title-color bg-black-bg" type="number" value={totalCartas} onChange={(event) => setTotalCartas(Number(event.target.value))} />
+					<input className="w-1/4 text-center h-12 rounded-md ml-5 mt-1 text-title-color bg-black-bg" type="number" min={0} value={totalCartas} onChange={(event) => setTotalCartas(Number(event.target.value))} />
 				</label>
 				<label className="text-title-color font-medium">
 					Número de cartas en la escalera:
@@ -138,10 +163,14 @@ function ProbabilidadEscalera() {
 
 			)}
 
-			{(!mostrarResultado && probabilidad != 0) && (
-				<div id="finalResult" className="bg-black-bg px-10 py-6 rounded-lg mt-8 flex justify-between items-center">
-					<p className="text-white">Los valores ingresados no son válidos</p>
-
+			{(!mostrarResultado && primeraVez) && (
+				<div id="finalResult" className="bg-black-bg px-10 py-6 rounded-lg mt-8">
+					<p className="text-white">Los valores ingresados no son válidos.</p>
+					<p>Tenga en cuenta las siguientes recomendaciones:</p>
+					<ul className="mt-3">
+						<li>1). Ningun numero ingresado puede ser negativo</li>
+						<li>2). El numero de cartas en la escalera no puede superar el numero total de cartas</li>
+					</ul>
 				</div>
 			)}
 

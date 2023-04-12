@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ejercicio de probabilidad con distribución de Poisson</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container mt-5">
+		<h1 class="mb-4">Ejercicio de probabilidad con distribución de Poisson</h1>
+		<p class="mb-5">Se sabe que para cierto tipo de alambre de cobre ocurren, en promedio, 1.5 fallas por milímetro. Si se supone
+			que el número de fallas es una variable aleatoria de Poisson, ¿cuál es la probabilidad de que no ocurran
+			fallas en cierta parte de un alambre que tiene 5 milímetros de longitud? ¿Cuál es el número promedio de
+			fallas en alguna parte de un alambre que tiene 5 milímetros de longitud?</p>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="lambda">Lambda (promedio de fallas por milímetro):</label>
+				<input type="number" id="lambda" name="lambda" class="form-control mb-3" min="0" step="0.01" required>
+				<label for="x">Longitud de la parte del alambre (en milímetros):</label>
+				<input type="number" id="x" name="x" class="form-control mb-3" min="0" required>
+				<button onclick="calcular()" class="btn btn-primary">Calcular</button>
+			</div>
+			<div class="col-md-6">
+				<p>La probabilidad de que no ocurran fallas en una parte de <span id="x_out"></span> milímetros del
+					alambre es <span id="prob_out"></span></p>
+				<p>El número promedio de fallas en alguna parte de <span id="x_out"></span> milímetros del alambre es
+					<span id="promedio_out"></span></p>
+			</div>
+		</div>
+
+		<div class="d-flex gap-5 mb-5 mt-5">
+			<div class="w-60 p-4 bg-dark text-white rounded-lg">
+			  <p class="font-medium mb-2">Applet creado por:</p>
+			  <p>Santiago Baron Zuleta (20212020052) sbaronz@udistrital.edu.co</p>
+			  <p>Referencia del libro: Ejercicio 5.79 Sección 5.5 Orden propuesto
+				en Walpole & Myers & Myers & Ye (2012, p.165)</p>
+			</div>
+		  </div>
+		  <div class="bg-light mb-5 p-4 rounded-lg text-dark font-medium">
+			<div>
+			  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+				<img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+			  </a>
+			  <br />
+			  Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licencia Creative Commons Atribución 4.0 Internacional</a>
+			</div>
+		  </div>
+	</div>
+
+
+
+	<script>
+		function calcular() {
+			const lambda = parseFloat(document.getElementById("lambda").value);
+			const x = parseFloat(document.getElementById("x").value);
+			const prob_no_fallas = Math.pow(Math.E, -lambda * x);
+			const promedio = lambda * x;
+			document.getElementById("x_out").textContent = x;
+			document.getElementById("prob_out").textContent = prob_no_fallas.toFixed(5);
+			document.getElementById("promedio_out").textContent = promedio.toFixed(2);
+		}
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
